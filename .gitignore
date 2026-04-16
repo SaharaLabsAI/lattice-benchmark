@@ -1,0 +1,47 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyw
+*.pyz
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Runtime outputs
+cache/*.jsonl
+cache/*.log
+*.log
+
+# Frontend (site)
+site/node_modules/
+site/dist/
+site/.vite/
+site/.yarn/install-state.gz
+site/.yarn/unplugged/
+site/.yarn/build-state.yml
+site/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+
+cache/
+
+# Large raw collection artifacts (keep outside repo)
+data/response/collect_pipeline/*/output/
