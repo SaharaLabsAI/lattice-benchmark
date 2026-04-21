@@ -1,0 +1,48 @@
+You are helping expand an evaluation dataset for a DeFi/Web3 agent. Generate new single-turn user queries and align them strictly with the predefined Task × Category framework and descriptions. The goal is to scale coverage while keeping quality stable, realistic, and easy to evaluate.
+
+You must follow these baseline assumptions and constraints:
+1) Queries should use real tokens, protocols, chains, and practical constraints to improve realism, but each query must still be evaluable without external sources or live ground truth.
+2) Do not evaluate factuality against live market data. The evaluation focus is on dimensions that can be judged directly from the output, such as completeness, coherence, and uncertainty transparency.
+3) Queries should be short and conversational. Slightly informal wording is allowed. Avoid overly polished expert phrasing or AI-sounding template language.
+
+Output language: Chinese (Simplified)
+Style: Real conversational language, mostly short one-sentence queries. Most rows should be questions ending with "？".
+Do not use symbols such as ":", "->", "—", "–", or "—>".
+Do not output any explanatory text.
+
+Strict output format:
+Output exactly one Markdown table with exactly 3 columns:
+Task | Category | Query
+- Do not put quotes around Query.
+- Do not output any text outside the table.
+- Category names must be exactly: C1 Basic, C2 Comparative, C3 Constrained, C4 Decision, C5 Ambiguous.
+
+Single-turn constraint:
+Each query must be independently evaluable and must not rely on follow-up turns or multi-turn context.
+
+Reference rules:
+- For C1/C2/C3/C4: Do not use vague references or context-dependent pronouns like "this protocol", "that project", "this announcement", "these constraints", "last time", "this time", "it", "they", etc. Name entities and scenarios explicitly (for example: Aave v3, Compound v3, Uniswap v3, Curve, EigenLayer, Ethereum mainnet, Arbitrum, Base, BTC, ETH, SOL, USDC).
+- For C5 Ambiguous: The query itself must omit key information that could materially change the answer. It can be ambiguous, but do not phrase it as "what information is missing" or "what info do you need".
+
+Extra requirement for C4 Decision:
+Ask for actionable choices or decision rules, but avoid repeating rigid wording like "give me xx". Use natural variation, such as "what would you choose", "should I", "is it better now to", "should I first...", "directly ... or ...".
+
+Extra requirement for C3 Constrained:
+Include practical constraints (capital, deadline, max loss/drawdown, chain/venue limits, preferences like no leverage, no bridging, no infinite approvals, limited time, etc.), and keep each query evaluable within one turn.
+
+Task List:
+Refer to the "Task List" table in the "DeFi Agent Evaluation Tasks and Protocol" attachment. Only use the "Task" and "Description" columns.
+
+Query Categories:
+Refer to the "Query Categories" table in the same attachment. Ignore the "Expected output behavior" column.
+
+Your generation task:
+Generate exactly 3 new queries for every (Task, Category) pair.
+- Total row count must equal 16 × 5 × 3.
+- Queries inside the same cell must be diverse and non-repetitive.
+- Use realistic DeFi/Web3 details (slippage, approvals, liquidation, fees, MEV, bridging, governance, unlocks, funding/OI), but keep queries short.
+- Do not require live prices or external data to evaluate answers.
+
+The "query seeds.csv" attachment contains sample queries for each cell. Use it as a style and structure reference.
+
+Now generate the table.
