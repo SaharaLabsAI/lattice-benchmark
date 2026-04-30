@@ -13,7 +13,7 @@ The dimensions, tasks, and categories are designed to be evaluable at scale usin
 
 Unlike benchmarks that compare foundation models on a shared agent framework, LATTICE evaluates production-level copilots as deployed in real products, reflecting the importance of orchestration and UI/UX in determining agent quality. We evaluate six real-world crypto copilots on 1,200 diverse queries and report breakdowns across dimensions, tasks, and query categories. Most copilots achieve comparable aggregate scores, but differ more significantly at the dimension and task level — suggesting meaningful trade-offs in decision support quality that aggregate rankings alone do not capture.
 
-For more details, please visit our benchmark [website](https://saharaai.com/crypto-agent-benchmark).
+For more details, please refer to the LATTICE [arXiv paper](https://arxiv.org/abs/2604.26235) and [benchmark website](https://saharaai.com/crypto-agent-benchmark).
 
 ## What This Repo Contains
 
@@ -139,6 +139,26 @@ python3 -m scoring.build_benchmark \
 python3 -m compileall scoring
 python3 -m scoring.batch --help
 python3 -m scoring.build_benchmark --help
+```
+
+## Citation
+
+If you use LATTICE (including any code or data in this repo) in your research, please cite our paper:
+
+Aaron Chan, Tengfei Li, Tianyi Xiao, Angela Chen, Junyi Du, and Xiang Ren. *LATTICE: Evaluating Decision Support Utility of Crypto Agents.* arXiv:2604.26235, 2026. [https://arxiv.org/abs/2604.26235](https://arxiv.org/abs/2604.26235)
+
+BibTeX:
+
+```bibtex
+@misc{chan2026lattice,
+  title         = {{LATTICE}: Evaluating Decision Support Utility of Crypto Agents},
+  author        = {Chan, Aaron and Li, Tengfei and Xiao, Tianyi and Chen, Angela and Du, Junyi and Ren, Xiang},
+  year          = {2026},
+  eprint        = {2604.26235},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CR},
+  url           = {https://arxiv.org/abs/2604.26235}
+}
 ```
 
 ## License
